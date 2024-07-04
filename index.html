@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>alerta con WebSocket en PHP</title>
+</head>
+<body>
+    <h1>alerta con WebSocket en PHP </h1>
+    <p>ejecuta primero el servidor "server_webSocjet.php" no sierrs la pestaña del serveridor y ejecuta notification "notification_webSocjet.php", si no te instalas los componentes no funciona para instalarlos ejecuta "composer install"</p>
+    <script>
+        const ws = new WebSocket('ws://localhost:8081');
+        ws.onopen = () => {
+            console.log('Conexión establecida');
+        };
+        ws.onmessage = (event) => {
+            alert(event.data);
+        };
+    </script>
+</body>
+</html>
